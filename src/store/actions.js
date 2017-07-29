@@ -7,9 +7,13 @@ export default {
 
   addTask ({ commit }, { listId, task }) {
     commit(types.ADD_TASK, { listId, task })
+  },
+
+  deleteTask ({ commit }, { listId, taskId }) {
+    commit(types.DELETE_TASK, { listId, taskId })
+  },
+
+  markAsCompleted ({ commit }, { listId, taskId }) {
+    commit(types.MARK_AS_COMPLETED, { listId, taskId })
   }
-
-  // deleteTask ({ commit, state }, listId, taskId) {}
-
-  // markAsCompleted ({ commit, state }, listId, taskId) {}
 }

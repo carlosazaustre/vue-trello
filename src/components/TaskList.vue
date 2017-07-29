@@ -4,8 +4,8 @@
       v-for="(task, index) in tasks"
       :key="index"
       :class="{ completed: task.completed }"
-      @click="markAsCompleted(listId, task.id)"
-      @dblclick="deleteTask(listId, task.id)">
+      @click="markAsCompleted({ listId, taskId: task.id })"
+      @dblclick="deleteTask({ listId, taskId: task.id })">
         {{ task.title }}
     </li>
     <input

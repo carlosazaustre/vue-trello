@@ -26,17 +26,19 @@ export default {
 
   // Delete a task from a task list
   [types.DELETE_TASK] (state, { listId, taskId }) {
-    let list = state.lists.filter(list => list.id === listId)
+    let atIndex = state.lists.findIndex(list => list.id === listId)
+    let list = state.lists[atIndex]
 
-    list.tasks.filter(task => task.id !== taskId)
+    list.tasks = list.tasks.filter(task => task.id !== taskId)
   },
 
   // Check a task as completed
   [types.MARK_AS_COMPLETED] (state, { listId, taskId }) {
-    let list = state.lists.filter(list => list.id === listId)
+    let atIndex = state.lists.findIndex(list => list.id === listId)
+    let list = state.lists[atIndex]
 
     list.tasks.filter(task => {
-      if (task.id === taskId) return !task.completed
+      if (task.id === taskId) task.completed = !task.completed
     })
   }
 }
