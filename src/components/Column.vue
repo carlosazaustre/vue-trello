@@ -3,7 +3,7 @@
     <header>
       <h3>{{ name }}</h3>
     </header>
-    <task-list :tasks="tasks" @addTask="addTask"></task-list>
+    <task-list :tasks="tasks" @addTask="handleAddTask"></task-list>
   </section>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   },
 
   methods: {
-    addTask (task) {
+    handleAddTask (task) {
       this.tasks.push(task)
     }
   }
