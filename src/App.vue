@@ -3,50 +3,42 @@
     <header>
       <span>Vue Trello</span>
     </header>
-    <template v-for="list in lists">
-      <column key="list.id" :name="list.name" :tasks="list.tasks"></column>
+    <template v-for="(list, i) in lists">
+      <column :key="i" :name="list.name" :tasks="list.tasks"></column>
     </template>
-    <input type="text" placeholder="✚ New List" v-model="listName" @keyup.enter="addColumn" />
+    <input
+      type="text"
+      placeholder="✚ New List"
+      v-model="listName"
+      @keyup.enter="addColumn(listName)"
+    />
   </div>
 </template>
 
 <script>
-import shortid from 'shortid'
+import { mapState, mapActions } from 'vuex'
 import Column from '@/components/Column'
 
 export default {
   name: 'app',
-  components: {
-    Column
-  },
+  components: { Column },
 
   data () {
     return {
-      lists: [
-        {
-          id: 0,
-          name: 'To Do',
-          tasks: [
-            { id: 0, title: 'Learn Vue', completed: false },
-            { id: 1, title: 'Learn Vue-Router', completed: true },
-            { id: 2, title: 'Learn Vuex', completed: false },
-            { id: 3, title: 'Learn Nuxt', completed: true }
-          ]
-        }
-      ],
       listName: ''
     }
   },
 
+  computed: {
+    ...mapState(['lists'])
+  },
+
   methods: {
-    addColumn () {
-      this.lists.push({
-        id: shortid.generate(),
-        name: this.listName,
-        tasks: []
-      })
-      this.listName = ''
-    }
+    ...mapActions(['addColumn'])
+    /* addColumn (name) {
+      console.log('nombre en el component', name)
+      this.$store.dispatch('addColumn', name)
+    } */
   }
 }
 </script>

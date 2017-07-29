@@ -1,8 +1,9 @@
 import shortid from 'shortid'
+import * as types from './mutation-types'
 
 export default {
   // Create a new task list
-  addColumn (state, { name }) {
+  [types.ADD_COLUMN] (state, { name }) {
     state.lists.push({
       id: shortid.generate(),
       name,
@@ -11,7 +12,7 @@ export default {
   },
 
   // Add a new task to a task list
-  addTask (state, { listId, title }) {
+  [types.ADD_TASK] (state, { listId, title }) {
     let list = state.lists.filter(list => list.id === listId)
 
     list.tasks.push({
@@ -22,14 +23,14 @@ export default {
   },
 
   // Delete a task from a task list
-  deleteTask (state, { listId, taskId }) {
+  [types.DELETE_TASK] (state, { listId, taskId }) {
     let list = state.lists.filter(list => list.id === listId)
 
     list.tasks.filter(task => task.id !== taskId)
   },
 
   // Check a task as completed
-  markAsCompleted (state, { listId, taskId }) {
+  [types.MARK_AS_COMPLETED] (state, { listId, taskId }) {
     let list = state.lists.filter(list => list.id === listId)
 
     list.tasks.filter(task => {
