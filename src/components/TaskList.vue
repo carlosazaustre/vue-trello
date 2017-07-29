@@ -1,23 +1,29 @@
 <template>
   <ul>
     <li
-      key="task.id"
-      v-for="task in tasks"
-      @click="markAsCompleted(task.id)"
-      @dblclick="deleteTask(task.id)"
-      :class="{ completed: task.completed }">
+      v-for="(task, index) in tasks"
+      :key="index"
+      :class="{ completed: task.completed }"
+      @click="markAsCompleted(list, task.id)"
+      @dblclick="deleteTask(list, task.id)">
         {{ task.title }}
     </li>
-    <input type="text" v-model="task" @keyup.enter="addTask" placeholder="New Task"/>
+    <input
+      type="text"
+      placeholder="New Task"
+      v-model="task"
+      @keyup.enter="addTask({ listId: list, title: task })"
+    />
   </ul>
 </template>
 
 <script>
-import shortid from 'shortid'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'task-list',
   props: {
+    list: Number,
     tasks: Array
   },
 
@@ -28,31 +34,11 @@ export default {
   },
 
   methods: {
-    addTask () {
-      this.$emit('addTask', {
-        id: shortid.generate(),
-        title: this.task,
-        completed: false
-      })
-      this.task = ''
-    },
-
-    markAsCompleted (id) {
-      this.tasks.filter(task => {
-        if (task.id === id) {
-          task.completed = !task.completed
-          return task
-        }
-      })
-    },
-
-    deleteTask (id) {
-      this.tasks.filter((task, index) => {
-        if (task.id === id) {
-          return this.tasks.splice(index, 1)
-        }
-      })
-    }
+    ...mapActions([
+      'addTask',
+      'markAsCompleted',
+      'deleteTask'
+    ])
   }
 }
 </script>

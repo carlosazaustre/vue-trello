@@ -1,3 +1,4 @@
+// import Vue from 'vue'
 import shortid from 'shortid'
 import * as types from './mutation-types'
 
@@ -12,9 +13,7 @@ export default {
   },
 
   // Add a new task to a task list
-  [types.ADD_TASK] (state, { listId, title }) {
-    let list = state.lists.filter(list => list.id === listId)
-
+  [types.ADD_TASK] (state, { list, title }) {
     list.tasks.push({
       id: shortid.generate(),
       title,

@@ -3,8 +3,13 @@
     <header>
       <span>Vue Trello</span>
     </header>
-    <template v-for="(list, i) in lists">
-      <column :key="i" :name="list.name" :tasks="list.tasks"></column>
+    <template v-for="(list, index) in lists">
+      <column
+        :key="index"
+        :list="list.id"
+        :name="list.name"
+        :tasks="list.tasks">
+      </column>
     </template>
     <input
       type="text"
@@ -35,10 +40,6 @@ export default {
 
   methods: {
     ...mapActions(['addColumn'])
-    /* addColumn (name) {
-      console.log('nombre en el component', name)
-      this.$store.dispatch('addColumn', name)
-    } */
   }
 }
 </script>

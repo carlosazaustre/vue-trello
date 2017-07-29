@@ -3,7 +3,10 @@
     <header>
       <h3>{{ name }}</h3>
     </header>
-    <task-list :tasks="tasks" @addTask="handleAddTask"></task-list>
+    <task-list
+      :list="list"
+      :tasks="tasks">
+    </task-list>
   </section>
 </template>
 
@@ -16,15 +19,12 @@ export default {
     TaskList
   },
   props: {
+    list: Number,
     name: String,
     tasks: Array
   },
 
-  methods: {
-    handleAddTask (task) {
-      this.tasks.push(task)
-    }
-  }
+  methods: { }
 }
 </script>
 
