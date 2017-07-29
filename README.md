@@ -2,6 +2,18 @@
 
 > Trello clone with Vue and Vuex
 
+![Trello clone with Vue and Vuex](./screenshot.png)
+
+## Features
+* Vue v2
+* Vuex v2
+* Manage state with actions and mutations
+
+## ToDos
+* Persistence with Firebase
+* Create Getters to manage partial state in Components
+* Improve CSS to Desktop and Tablets screen
+
 ## Build Setup
 
 ``` bash
