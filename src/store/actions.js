@@ -5,13 +5,11 @@ export default {
     commit(types.ADD_COLUMN, { name })
   },
 
-  addTask ({ commit, state }, { listId, task }) {
-    let atIndex = state.lists.findIndex(list => list.id === listId)
-    let list = state.lists[atIndex]
-    commit(types.ADD_TASK, { list, task })
+  addTask ({ commit }, { listId, task }) {
+    commit(types.ADD_TASK, { listId, task })
   }
 
-  // deleteTask ({ commit, state }, listId, taskId) {},
+  // deleteTask ({ commit, state }, listId, taskId) {}
 
   // markAsCompleted ({ commit, state }, listId, taskId) {}
 }

@@ -13,7 +13,10 @@ export default {
   },
 
   // Add a new task to a task list
-  [types.ADD_TASK] (state, { list, task }) {
+  [types.ADD_TASK] (state, { listId, task }) {
+    let atIndex = state.lists.findIndex(list => list.id === listId)
+    let list = state.lists[atIndex]
+
     list.tasks.push({
       id: shortid.generate(),
       title: task,
