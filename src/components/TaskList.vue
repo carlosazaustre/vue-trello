@@ -4,15 +4,15 @@
       v-for="(task, index) in tasks"
       :key="index"
       :class="{ completed: task.completed }"
-      @click="markAsCompleted(list, task.id)"
-      @dblclick="deleteTask(list, task.id)">
+      @click="markAsCompleted(listId, task.id)"
+      @dblclick="deleteTask(listId, task.id)">
         {{ task.title }}
     </li>
     <input
       type="text"
       placeholder="New Task"
       v-model="task"
-      @keyup.enter="addTask({ listId: list, title: task })"
+      @keyup.enter="addTask({ listId, task })"
     />
   </ul>
 </template>
@@ -23,7 +23,7 @@ import { mapActions } from 'vuex'
 export default {
   name: 'task-list',
   props: {
-    list: Number,
+    listId: String,
     tasks: Array
   },
 

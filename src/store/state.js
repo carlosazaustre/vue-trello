@@ -1,13 +1,13 @@
 export default {
   lists: [
     {
-      id: 0,
+      id: 'a',
       name: 'To Do',
       tasks: [
-        { id: 0, title: 'Learn Vue', completed: true },
-        { id: 1, title: 'Learn Vue-Router', completed: true },
-        { id: 2, title: 'Learn Vuex', completed: false },
-        { id: 3, title: 'Learn Nuxt', completed: false }
+        { id: 'a0', title: 'Learn Vue', completed: true },
+        { id: 'a1', title: 'Learn Vue-Router', completed: true },
+        { id: 'a2', title: 'Learn Vuex', completed: false },
+        { id: 'a3', title: 'Learn Nuxt', completed: false }
       ]
     }
   ]

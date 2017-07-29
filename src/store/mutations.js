@@ -13,10 +13,10 @@ export default {
   },
 
   // Add a new task to a task list
-  [types.ADD_TASK] (state, { list, title }) {
+  [types.ADD_TASK] (state, { list, task }) {
     list.tasks.push({
       id: shortid.generate(),
-      title,
+      title: task,
       completed: false
     })
   },

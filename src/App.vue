@@ -6,7 +6,7 @@
     <template v-for="(list, index) in lists">
       <column
         :key="index"
-        :list="list.id"
+        :listId="list.id"
         :name="list.name"
         :tasks="list.tasks">
       </column>

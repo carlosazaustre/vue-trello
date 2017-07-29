@@ -4,7 +4,7 @@
       <h3>{{ name }}</h3>
     </header>
     <task-list
-      :list="list"
+      :listId="listId"
       :tasks="tasks">
     </task-list>
   </section>
@@ -19,7 +19,7 @@ export default {
     TaskList
   },
   props: {
-    list: Number,
+    listId: String,
     name: String,
     tasks: Array
   },
