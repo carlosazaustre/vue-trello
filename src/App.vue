@@ -7,8 +7,7 @@
       <column
         :key="index"
         :listId="list.id"
-        :name="list.name"
-        :tasks="list.tasks">
+        :name="list.name">
       </column>
     </template>
     <input
@@ -45,42 +44,42 @@ export default {
 </script>
 
 <style scoped>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 0 auto;
-  padding: 0;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin: 0 auto;
+    padding: 0;
+  }
 
-header {
-  background-color: #546E7A;
-  color: white;
-  margin: 0;
-  padding: 1rem;
-}
+  header {
+    background-color: #546E7A;
+    color: white;
+    margin: 0;
+    padding: 1rem;
+  }
 
-input {
-  background-color: #43A077;
-  font-size: 1.2rem;
-  margin: 1rem;
-  padding: 1rem;
-  color: white;
-  border: 0;
-  width: 80%;
-  transition: all 600ms ease;
-  outline: 0;
-}
+  input {
+    background-color: #43A077;
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: 1rem;
+    color: white;
+    border: 0;
+    width: 80%;
+    transition: all 600ms ease;
+    outline: 0;
+  }
 
-input:active, input:focus {
-  background-color: white;
-  color: #43A077;
-  border-bottom: 2px solid #43A077;
-}
+  input:active, input:focus {
+    background-color: white;
+    color: #43A077;
+    border-bottom: 2px solid #43A077;
+  }
 
-input::placeholder {
-  color: white;
-}
+  input::placeholder {
+    color: white;
+  }
 </style>

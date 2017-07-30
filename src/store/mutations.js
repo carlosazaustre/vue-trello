@@ -1,4 +1,3 @@
-// import Vue from 'vue'
 import shortid from 'shortid'
 import * as types from './mutation-types'
 import { getListById } from '@/utils'
@@ -32,7 +31,7 @@ export default {
   // Check a task as completed
   [types.MARK_AS_COMPLETED] (state, { listId, taskId }) {
     let list = getListById(state.lists, listId)
-    list.tasks.filter(task => {
+    list.tasks.map(task => {
       if (task.id === taskId) task.completed = !task.completed
     })
   }

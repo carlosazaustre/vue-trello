@@ -1,7 +1,12 @@
+import { getListById } from '@/utils'
+
 export default {
-  getTasksFromList: (state) => (listId) => {
-    let list = state.lists.filter(list => list.id === listId)
-    console.log('getters [getTasksFromList]: ', list)
+  getListById: (state) => (listId) => {
+    return getListById(state.lists, listId)
+  },
+
+  getTasksFromList: (state, getters) => (listId) => {
+    let list = getters.getListById(listId)
     return list.tasks
   }
 }

@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import TaskList from '@/components/TaskList'
 
 export default {
@@ -20,11 +21,18 @@ export default {
   },
   props: {
     listId: String,
-    name: String,
-    tasks: Array
+    name: String
   },
 
-  methods: { }
+  computed: {
+    ...mapGetters(['getTasksFromList'])
+  },
+
+  created () {
+    this.tasks = this.getTasksFromList(this.listId)
+  },
+
+  methods: {}
 }
 </script>
 
