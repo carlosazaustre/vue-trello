@@ -25,7 +25,9 @@ export default {
   // Delete a task from a task list
   [types.DELETE_TASK] (state, { listId, taskId }) {
     let list = getListById(state.lists, listId)
-    list.tasks = list.tasks.filter(task => task.id !== taskId)
+    let atIndex = list.tasks.findIndex(task => task.id === taskId)
+    list.tasks.splice(atIndex, 1)
+    // list.tasks = list.tasks.filter(task => task.id !== taskId)
   },
 
   // Check a task as completed
