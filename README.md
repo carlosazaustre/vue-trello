@@ -12,7 +12,8 @@
 ## ToDos
 * Persistence with Firebase
 * Create Getters to manage partial state in Components
-* Improve CSS to Desktop and Tablets screen
+* Improve CSS to Desktop and Tablet screens
+* Create Vuex modules when the app has new features
 
 ## Build Setup
 
