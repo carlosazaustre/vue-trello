@@ -14,7 +14,7 @@
       type="text"
       placeholder="✚ New List"
       v-model="listName"
-      @keyup.enter="addColumn(listName)"
+      @keyup.enter="add(listName)"
     />
   </div>
 </template>
@@ -38,6 +38,10 @@ export default {
   },
 
   methods: {
+    add (listName) {
+      this.addColumn(listName)
+      this.listName = ''
+    },
     ...mapActions(['addColumn'])
   }
 }

@@ -12,7 +12,7 @@
       type="text"
       placeholder="New Task"
       v-model="task"
-      @keyup.enter="addTask({ listId, task })"
+      @keyup.enter="add({ listId, task })"
     />
   </ul>
 </template>
@@ -34,6 +34,10 @@ export default {
   },
 
   methods: {
+    add ({ listId, task }) {
+      this.addTask({ listId, task })
+      this.task = ''
+    },
     ...mapActions([
       'addTask',
       'markAsCompleted',
