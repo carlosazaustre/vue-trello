@@ -12,7 +12,7 @@
       type="text"
       placeholder="✚ New List"
       v-model="listName"
-      @keyup.enter="add(listName)"
+      @keyup.enter="add()"
     />
   </section>
 </template>
@@ -49,8 +49,8 @@ export default {
     ...mapActions([
       'addColumn'
     ]),
-    add (listName) {
-      this.addColumn({ board: this.id, name: listName })
+    add () {
+      this.addColumn({ board: this.id, name: this.listName })
       this.listName = ''
     }
   }

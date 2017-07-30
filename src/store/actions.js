@@ -2,6 +2,14 @@ import shortid from 'shortid'
 import * as types from './mutation-types'
 
 export default {
+  addBoard ({ commit }, { name }) {
+    let board = {
+      id: shortid.generate(),
+      name
+    }
+    commit(types.ADD_BOARD, { board })
+  },
+
   addColumn ({ commit }, { board, name }) {
     let column = {
       id: shortid.generate(),
