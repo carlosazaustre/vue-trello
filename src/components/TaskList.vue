@@ -4,7 +4,7 @@
       v-for="(task, index) in tasks"
       :key="index"
       :class="{ completed: task.completed }"
-      @click="markAsCompleted({ taskId: task.id })"
+      @click="markAsCompleted({ task })"
       @dblclick="deleteTask({ taskId: task.id })">
         {{ task.title }}
     </li>
@@ -40,7 +40,7 @@ export default {
       'deleteTask'
     ]),
     add () {
-      this.addTask({ listId: this.listId, title: this.title })
+      this.addTask({ list: this.listId, title: this.title })
       this.title = ''
     }
   }

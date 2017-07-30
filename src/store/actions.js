@@ -6,16 +6,15 @@ export default {
     let column = {
       id: shortid.generate(),
       name,
-      board,
-      tasks: []
+      board
     }
     commit(types.ADD_COLUMN, { column })
   },
 
-  addTask ({ commit }, { listId, title }) {
+  addTask ({ commit }, { list, title }) {
     let task = {
       id: shortid.generate(),
-      list: listId,
+      list,
       title,
       completed: false
     }
@@ -26,7 +25,7 @@ export default {
     commit(types.DELETE_TASK, { taskId })
   },
 
-  markAsCompleted ({ commit }, { taskId }) {
-    commit(types.MARK_AS_COMPLETED, { taskId })
+  markAsCompleted ({ commit }, { task }) {
+    commit(types.MARK_AS_COMPLETED, { task })
   }
 }
