@@ -5,15 +5,17 @@
 ![Trello clone with Vue and Vuex](./screenshot.png)
 
 ## Features
-* Vue v2
+* Vue.js v2
 * Vuex v2
 * Manage state with actions and mutations
+* Getters to manage partial state in Components
 
 ## ToDos
+* Vue-Router to show diferents boards
 * Persistence with Firebase
-* Create Getters to manage partial state in Components
+* User authentication
 * Improve CSS to Desktop and Tablet screens
-* Create Vuex modules when the app has new features
+* Create Vuex modules when the app grow with new features
 
 ## Build Setup
 
