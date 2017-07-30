@@ -8,5 +8,9 @@ export default {
   getTasksFromList: (state, getters) => (listId) => {
     let list = getters.getListById(listId)
     return list.tasks
+  },
+
+  getListsByBoard: (state) => (boardId) => {
+    return state.lists.filter(list => list.board === boardId)
   }
 }

@@ -1,13 +1,26 @@
 export default {
+  boards: [
+    { id: 'a', name: 'My Pet-Project' },
+    { id: 'b', name: 'Home Tasks' }
+  ],
   lists: [
     {
-      id: 'a',
+      id: 'aa',
+      board: 'a',
       name: 'To Do',
       tasks: [
-        { id: 'a0', title: 'Learn Vue', completed: true },
-        { id: 'a1', title: 'Learn Vue-Router', completed: true },
-        { id: 'a2', title: 'Learn Vuex', completed: false },
-        { id: 'a3', title: 'Learn Nuxt', completed: false }
+        { id: 'aa0', title: 'Learn Vue', completed: true },
+        { id: 'aa1', title: 'Learn Vue-Router', completed: true },
+        { id: 'aa2', title: 'Learn Vuex', completed: false },
+        { id: 'aa3', title: 'Learn Nuxt', completed: false }
+      ]
+    },
+    {
+      id: 'bb',
+      board: 'b',
+      name: 'To Buy',
+      tasks: [
+        { id: 'bb0', title: 'Milk', completed: false }
       ]
     }
   ]

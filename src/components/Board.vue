@@ -1,6 +1,7 @@
 <template>
   <section>
-    <template v-for="(list, index) in lists">
+    <h3>{{ name }}</h3>
+    <template v-for="(list, index) in boardLists">
       <column
         :key="index"
         :listId="list.id"
@@ -17,12 +18,17 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import Column from './Column'
 
 export default {
   name: 'board',
   components: { Column },
+
+  props: {
+    name: String,
+    id: String
+  },
 
   data () {
     return {
@@ -31,20 +37,33 @@ export default {
   },
 
   computed: {
-    ...mapState(['lists'])
+    ...mapGetters([
+      'getListsByBoard'
+    ]),
+    boardLists () {
+      return this.getListsByBoard(this.id)
+    }
   },
 
   methods: {
+    ...mapActions([
+      'addColumn'
+    ]),
     add (listName) {
-      this.addColumn(listName)
+      this.addColumn({ board: this.id, name: listName })
       this.listName = ''
-    },
-    ...mapActions(['addColumn'])
+    }
   }
 }
 </script>
 
 <style scoped>
+  h3 {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-bottom: 2px solid #43A077;
+  }
+
   input {
     background-color: #43A077;
     font-size: 1.2rem;

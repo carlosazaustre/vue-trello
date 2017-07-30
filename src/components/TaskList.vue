@@ -11,8 +11,8 @@
     <input
       type="text"
       placeholder="New Task"
-      v-model="task"
-      @keyup.enter="add({ listId, task })"
+      v-model="title"
+      @keyup.enter="add({ listId, title })"
     />
   </ul>
 </template>
@@ -29,14 +29,14 @@ export default {
 
   data () {
     return {
-      task: ''
+      title: ''
     }
   },
 
   methods: {
-    add ({ listId, task }) {
-      this.addTask({ listId, task })
-      this.task = ''
+    add ({ listId, title }) {
+      this.addTask({ listId, title })
+      this.title = ''
     },
     ...mapActions([
       'addTask',

@@ -1,11 +1,23 @@
+import shortid from 'shortid'
 import * as types from './mutation-types'
 
 export default {
-  addColumn ({ commit }, name) {
-    commit(types.ADD_COLUMN, { name })
+  addColumn ({ commit }, { board, name }) {
+    let column = {
+      id: shortid.generate(),
+      name,
+      board,
+      tasks: []
+    }
+    commit(types.ADD_COLUMN, { column })
   },
 
-  addTask ({ commit }, { listId, task }) {
+  addTask ({ commit }, { listId, title }) {
+    let task = {
+      id: shortid.generate(),
+      title,
+      completed: false
+    }
     commit(types.ADD_TASK, { listId, task })
   },
 

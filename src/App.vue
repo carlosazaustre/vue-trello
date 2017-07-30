@@ -3,16 +3,27 @@
     <header>
       <span>Vue Trello</span>
     </header>
-    <board></board>
+    <template v-for="(board, index) in boards">
+      <board
+        :key="index"
+        :id="board.id"
+        :name="board.name">
+      </board>
+    </template>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Board from '@/components/Board'
 
 export default {
   name: 'app',
-  components: { Board }
+  components: { Board },
+
+  computed: {
+    ...mapState(['boards'])
+  }
 }
 </script>
 

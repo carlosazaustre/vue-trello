@@ -19,13 +19,16 @@ export default {
   components: {
     TaskList
   },
+
   props: {
     listId: String,
     name: String
   },
 
   computed: {
-    ...mapGetters(['getTasksFromList'])
+    ...mapGetters([
+      'getTasksFromList'
+    ])
   },
 
   created () {
