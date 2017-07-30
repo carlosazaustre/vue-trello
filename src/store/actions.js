@@ -15,17 +15,18 @@ export default {
   addTask ({ commit }, { listId, title }) {
     let task = {
       id: shortid.generate(),
+      list: listId,
       title,
       completed: false
     }
-    commit(types.ADD_TASK, { listId, task })
+    commit(types.ADD_TASK, { task })
   },
 
-  deleteTask ({ commit }, { listId, taskId }) {
-    commit(types.DELETE_TASK, { listId, taskId })
+  deleteTask ({ commit }, { taskId }) {
+    commit(types.DELETE_TASK, { taskId })
   },
 
-  markAsCompleted ({ commit }, { listId, taskId }) {
-    commit(types.MARK_AS_COMPLETED, { listId, taskId })
+  markAsCompleted ({ commit }, { taskId }) {
+    commit(types.MARK_AS_COMPLETED, { taskId })
   }
 }

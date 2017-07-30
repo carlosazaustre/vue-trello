@@ -4,15 +4,15 @@
       v-for="(task, index) in tasks"
       :key="index"
       :class="{ completed: task.completed }"
-      @click="markAsCompleted({ listId, taskId: task.id })"
-      @dblclick="deleteTask({ listId, taskId: task.id })">
+      @click="markAsCompleted({ taskId: task.id })"
+      @dblclick="deleteTask({ taskId: task.id })">
         {{ task.title }}
     </li>
     <input
       type="text"
       placeholder="New Task"
       v-model="title"
-      @keyup.enter="add({ listId, title })"
+      @keyup.enter="add()"
     />
   </ul>
 </template>
@@ -34,15 +34,15 @@ export default {
   },
 
   methods: {
-    add ({ listId, title }) {
-      this.addTask({ listId, title })
-      this.title = ''
-    },
     ...mapActions([
       'addTask',
       'markAsCompleted',
       'deleteTask'
-    ])
+    ]),
+    add () {
+      this.addTask({ listId: this.listId, title: this.title })
+      this.title = ''
+    }
   }
 }
 </script>

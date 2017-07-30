@@ -5,7 +5,7 @@
     </header>
     <task-list
       :listId="listId"
-      :tasks="tasks">
+      :tasks="tasksList">
     </task-list>
   </section>
 </template>
@@ -28,11 +28,10 @@ export default {
   computed: {
     ...mapGetters([
       'getTasksFromList'
-    ])
-  },
-
-  created () {
-    this.tasks = this.getTasksFromList(this.listId)
+    ]),
+    tasksList () {
+      return this.getTasksFromList(this.listId)
+    }
   },
 
   methods: {}

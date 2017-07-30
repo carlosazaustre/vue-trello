@@ -1,16 +1,11 @@
-import { getListById } from '@/utils'
+// import { getListById } from '@/utils'
 
 export default {
-  getListById: (state) => (listId) => {
-    return getListById(state.lists, listId)
-  },
-
-  getTasksFromList: (state, getters) => (listId) => {
-    let list = getters.getListById(listId)
-    return list.tasks
-  },
-
   getListsByBoard: (state) => (boardId) => {
     return state.lists.filter(list => list.board === boardId)
+  },
+
+  getTasksFromList: (state) => (listId) => {
+    return state.tasks.filter(task => task.list === listId)
   }
 }
