@@ -2,7 +2,8 @@
 
 > Trello clone with Vue and Vuex
 
-![Trello clone with Vue and Vuex](./screenshot.png)
+![Home View](./screenshot_a.png)
+![Board View](./screenshot_b.png)
 
 ## Features
 * Vue.js v2
