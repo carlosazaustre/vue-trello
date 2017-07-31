@@ -1,19 +1,20 @@
 <template>
   <section>
     <h3>{{ name }}</h3>
-    <template v-for="(list, index) in boardLists">
-      <column
-        :key="index"
-        :listId="list.id"
-        :name="list.name">
-      </column>
-    </template>
     <input
       type="text"
       placeholder="✚ New List"
       v-model="listName"
       @keyup.enter="add()"
     />
+    <div class="container">
+      <column
+        v-for="(list, index) in boardLists"
+        :key="index"
+        :listId="list.id"
+        :name="list.name">
+      </column>
+    </div>
   </section>
 </template>
 
@@ -62,6 +63,14 @@ export default {
     font-size: 1.2rem;
     padding: 0.5rem;
     border-bottom: 2px solid #43A077;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   input {

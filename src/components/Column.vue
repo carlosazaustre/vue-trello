@@ -38,10 +38,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   section {
     border: 1px solid #43A077;
     margin: 0.5rem;
+    width: 100%;
+
+    @media screen and (min-width: 600px) {
+      width: calc(50% - 1rem - 2px);
+    }
+    @media screen and (min-width: 1024px) {
+      width: calc(33% - 1rem - 2px);
+    }
+    @media screen and (min-width: 1200px) {
+      width: calc(25% - 1rem - 2px);
+    }
   }
 
   header {

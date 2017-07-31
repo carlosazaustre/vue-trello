@@ -9,13 +9,12 @@
       v-model="boardName"
       @keyup.enter="add()"
     />
-    <template v-for="(board, index) in boards">
-      <board
-        :key="index"
-        :id="board.id"
-        :name="board.name">
-      </board>
-    </template>
+    <board
+      v-for="(board, index) in boards"
+      :key="index"
+      :id="board.id"
+      :name="board.name">
+    </board>
   </div>
 </template>
 
