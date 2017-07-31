@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h3>❏ {{ name }}</h3>
+    <h3><span>My Boards</span> ▸ {{ name }}</h3>
     <input
       type="text"
       placeholder="Add a list..."
@@ -61,8 +61,12 @@ export default {
 <style lang="scss" scoped>
   h3 {
     color: #37474f;
-    font-size: 1.4rem;
+    text-align: left;
     margin: 1.5rem;
+
+    span {
+      color: #546e7a;
+    }
   }
 
   section {

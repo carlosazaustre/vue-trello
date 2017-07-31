@@ -1,30 +1,19 @@
 <template>
   <div id="app">
     <app-header :user="user"></app-header>
-    <input
-      type="text"
-      placeholder="✚ New Board"
-      v-model="boardName"
-      @keyup.enter="add()"
-    />
-    <board
-      v-for="(board, index) in boards"
-      :key="index"
-      :id="board.id"
-      :name="board.name">
-    </board>
     <router-view></router-view>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
 import AppHeader from '@/components/AppHeader'
-import Board from '@/components/Board'
+import AppFooter from '@/components/AppFooter'
 
 export default {
   name: 'app',
-  components: { Board, AppHeader },
+  components: { AppHeader, AppFooter },
 
   data () {
     return {
@@ -82,6 +71,21 @@ export default {
 
     &::placeholder {
       color: white;
+    }
+  }
+
+  footer {
+    box-sizing: border-box;
+    background-color: #cfd8dc;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+
+    a {
+      text-decoration: none;
+      color: #546E7A;
     }
   }
 </style>
