@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -75,14 +75,15 @@ export default {
     outline: 0;
     transition: all 600ms ease;
     width: 100%;
-  }
 
-  input:focus, input:active {
-    background-color: white;
-    color: #546E7A;
-  }
+    &:focus,
+    &:active {
+      background-color: white;
+      color: #546E7A;
+    }
 
-  input::placeholder {
-    color: white;
+    &::placeholder {
+      color: white;
+    }
   }
 </style>

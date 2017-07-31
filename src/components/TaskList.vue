@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   ul {
     list-style: none;
     margin: 0;
@@ -57,15 +57,15 @@ export default {
   li {
     margin: 0;
     padding: 1rem;
-  }
 
-  li.completed {
-    background-color: #C8E6C9;
-    color: #2E7D32;
-  }
+    &.completed {
+      background-color: #C8E6C9;
+      color: #2E7D32;
+    }
 
-  li:not(:last-child) {
-    border-bottom: 1px solid #43A077;
+    &:not(:last-child) {
+      border-bottom: 1px solid #43A077;
+    }
   }
 
   input {
@@ -75,9 +75,10 @@ export default {
     outline: 0;
     width: 90%;
     transition: background-color 600ms ease;
-  }
 
-  input:focus, input:active {
-    background-color: #E8F5E9;
+    &:focus,
+    &:active {
+      background-color: #E8F5E9;
+    }
   }
 </style>

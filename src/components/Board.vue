@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   h3 {
     font-size: 1.2rem;
     padding: 0.5rem;
@@ -74,15 +74,16 @@ export default {
     width: 80%;
     transition: all 600ms ease;
     outline: 0;
-  }
 
-  input:active, input:focus {
-    background-color: white;
-    color: #43A077;
-    border-bottom: 2px solid #43A077;
-  }
+    &:active,
+    &:focus {
+      background-color: white;
+      color: #43A077;
+      border-bottom: 2px solid #43A077;
+    }
 
-  input::placeholder {
-    color: white;
+    &::placeholder {
+      color: white;
+    }
   }
 </style>

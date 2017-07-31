@@ -1,7 +1,13 @@
 export default {
+  user: {
+    displayName: 'Carlos Azaustre',
+    email: 'test@mail.com',
+    photoURL: 'https://avatars0.githubusercontent.com/u/650752?v=4&s=64'
+  },
+
   boards: {
-    'a': { id: 'a', name: 'My Pet-Project' },
-    'b': { id: 'b', name: 'Home Tasks' }
+    'a': { id: 'a', owner: '1', name: 'My Pet-Project' },
+    'b': { id: 'b', owner: '2', name: 'Home Tasks' }
   },
 
   lists: {
