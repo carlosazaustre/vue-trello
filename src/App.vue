@@ -1,30 +1,30 @@
 <template>
   <div id="app">
-    <header>
-      <span>Vue Trello</span>
-    </header>
-    <!--<input
+    <app-header :user="user"></app-header>
+    <input
       type="text"
       placeholder="✚ New Board"
       v-model="boardName"
       @keyup.enter="add()"
-    />-->
+    />
     <board
       v-for="(board, index) in boards"
       :key="index"
       :id="board.id"
       :name="board.name">
     </board>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import AppHeader from '@/components/AppHeader'
 import Board from '@/components/Board'
 
 export default {
   name: 'app',
-  components: { Board },
+  components: { Board, AppHeader },
 
   data () {
     return {
@@ -33,7 +33,10 @@ export default {
   },
 
   computed: {
-    ...mapState(['boards'])
+    ...mapState([
+      'user',
+      'boards'
+    ])
   },
 
   methods: {
@@ -59,15 +62,6 @@ export default {
     text-align: center;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-  }
-
-  header {
-    background-color: #607d8b;
-    color: #90a4ae;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0;
-    padding: 1rem;
   }
 
   input {
