@@ -9,13 +9,15 @@
 * Vuex v2
 * Manage state with actions and mutations
 * Getters to manage partial state in Components
+* Scoped styles with Sass/SCSS
+* User can create multiple boards, lists and tasks
 
 ## ToDos
 * Vue-Router to show diferents boards
 * Persistence with Firebase
 * User authentication
-* Improve CSS to Desktop and Tablet screens
 * Create Vuex modules when the app grow with new features
+* Lazy loading modules in Vuex and Route based components
 
 ## Build Setup
 

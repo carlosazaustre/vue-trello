@@ -10,7 +10,7 @@
     </li>
     <input
       type="text"
-      placeholder="New Task"
+      placeholder="Add a new task..."
       v-model="title"
       @keyup.enter="add()"
     />
@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   ul {
     list-style: none;
     margin: 0;
@@ -55,30 +55,40 @@ export default {
   }
 
   li {
-    margin: 0;
+    background-color: #fafafa;
+    border-radius: 3px;
+    border-bottom: 1px solid #ccc;
+    margin: 0.25rem 0;
     padding: 1rem;
 
     &.completed {
-      background-color: #C8E6C9;
-      color: #2E7D32;
-    }
-
-    &:not(:last-child) {
-      border-bottom: 1px solid #43A077;
+      background-color: #cfd8dc;
+      color: #90a4ae;
     }
   }
 
   input {
+    box-sizing: border-box;
+    background-color: #eceff1;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
     margin: 0.5rem;
-    padding: 0.75rem;
-    border: 1px solid #43A077;
     outline: 0;
-    width: 90%;
+    padding: 0.75rem 0;
     transition: background-color 600ms ease;
+    width: 100%;
 
     &:focus,
     &:active {
-      background-color: #E8F5E9;
+      background-color: #fafafa;
+      border-bottom: 1px solid #ccc;
+      margin: 0.25rem 0;
+      padding: 1rem;
+    }
+
+    &::placeholder {
+      color: #90a4ae;
     }
   }
 </style>

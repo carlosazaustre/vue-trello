@@ -1,9 +1,9 @@
 <template>
   <section>
-    <h3>{{ name }}</h3>
+    <h3>❏ {{ name }}</h3>
     <input
       type="text"
-      placeholder="✚ New List"
+      placeholder="Add a list..."
       v-model="listName"
       @keyup.enter="add()"
     />
@@ -58,41 +58,47 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   h3 {
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    border-bottom: 2px solid #43A077;
+    color: #37474f;
+    font-size: 1.4rem;
+    margin: 1.5rem;
+  }
+
+  section {
+    text-align: left;
   }
 
   .container {
+    box-sizing: border-box;
+    align-items: flex-start;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   input {
-    background-color: #43A077;
-    font-size: 1.2rem;
-    margin: 1rem;
-    padding: 1rem;
-    color: white;
+    background-color: #607d8b;
     border: 0;
-    width: 80%;
-    transition: all 600ms ease;
+    border-radius: 3px;
+    box-shadow: 0 0 0 0.5px rgba(49,49,93,.03),
+      0 2px 5px 0 rgba(49,49,93,.1),
+      0 1px 2px 0 rgba(0,0,0,.08);
+    color: #607d8b;
+    font-size: 1.2rem;
+    margin: 0 1rem;
     outline: 0;
+    padding: 1rem;
+    transition: all 600ms ease;
 
     &:active,
     &:focus {
-      background-color: white;
-      color: #43A077;
-      border-bottom: 2px solid #43A077;
+      background-color: #fafafa;
     }
 
     &::placeholder {
-      color: white;
+      color: #fafafa;
     }
   }
 </style>

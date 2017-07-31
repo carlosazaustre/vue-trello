@@ -38,28 +38,33 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   section {
-    border: 1px solid #43A077;
-    margin: 0.5rem;
+    box-sizing: border-box;
+    background-color: #eceff1;
+    border-radius: 3px;
+    box-shadow: 0 0 0 0.5px rgba(49,49,93,.03),
+      0 2px 5px 0 rgba(49,49,93,.1),
+      0 1px 2px 0 rgba(0,0,0,.08);
+    margin: 1rem;
+    padding: 1rem;
     width: 100%;
 
     @media screen and (min-width: 600px) {
-      width: calc(50% - 1rem - 2px);
+      width: calc(50% - 2rem - 2px);
     }
     @media screen and (min-width: 1024px) {
-      width: calc(33% - 1rem - 2px);
+      width: calc(33% - 2rem - 2px);
     }
     @media screen and (min-width: 1200px) {
-      width: calc(25% - 1rem - 2px);
+      width: calc(25% - 2rem - 2px);
     }
   }
 
   header {
-    background-color: #43A077;
+    color: #37474f;
     margin: 0;
-    padding: 0.5rem;
-    color: white;
+    padding-bottom: 1rem;
   }
 
   h3 {
