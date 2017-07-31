@@ -11,9 +11,9 @@
 * Getters to manage partial state in Components
 * Scoped styles with Sass/SCSS
 * User can create multiple boards, lists and tasks
+* Vue-Router to show differents boards
 
 ## ToDos
-* Vue-Router to show diferents boards
 * Persistence with Firebase
 * User authentication
 * Create Vuex modules when the app grow with new features
