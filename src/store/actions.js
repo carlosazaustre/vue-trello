@@ -8,9 +8,9 @@ export default {
     commit(types.FETCH_BOARDS_REQUEST)
 
     let boardsRef = db.ref('/boards')
-    boardsRef.once('value', snapshot => {
-      commit(types.FETCH_BOARDS_SUCCESS, { boards: snapshot.val() })
-    })
+    boardsRef.once('value')
+      .then(snap => commit(types.FETCH_BOARDS_SUCCESS, { boards: snap.val() }))
+      .catch(error => commit(types.FETCH_BOARDS_FAILURE, { error }))
   },
 
   addBoard ({ commit }, { name }) {

@@ -2,6 +2,9 @@
   <div>
     <h3>My Boards</h3>
     <div class="boards-collection">
+      <template v-if="fetchingData">
+        <span>Loading...</span>
+      </template>
       <board-card
         v-for="(board, index) in boards"
         :key="index"
@@ -21,7 +24,11 @@ export default {
   components: { BoardCard },
 
   computed: {
-    ...mapState(['boards'])
+    ...mapState([
+      'boards',
+      'fetchingData',
+      'error'
+    ])
   },
 
   methods: {

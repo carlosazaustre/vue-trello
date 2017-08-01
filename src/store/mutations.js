@@ -2,13 +2,21 @@ import Vue from 'vue'
 import * as types from './mutation-types'
 
 export default {
-  // Fetch the boars through firebase
+  // Fetch the boards through firebase
   [types.FETCH_BOARDS_REQUEST] (state) {
-    console.log('Fetching data...')
+    state.fetchingData = true
+    state.error = null
   },
 
   [types.FETCH_BOARDS_SUCCESS] (state, { boards }) {
+    state.fetchingData = false
+    state.error = null
     state.boards = { ...boards }
+  },
+
+  [types.FETCH_BOARDS_FAILURE] (state, { error }) {
+    state.fetchingData = false
+    state.error = error
   },
 
   // Create a new board
