@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import BoardCard from '@/components/BoardCard'
 
 export default {
@@ -22,6 +22,14 @@ export default {
 
   computed: {
     ...mapState(['boards'])
+  },
+
+  methods: {
+    ...mapActions(['fetchBoards'])
+  },
+
+  created () {
+    this.fetchBoards()
   }
 }
 </script>

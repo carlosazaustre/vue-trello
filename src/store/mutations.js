@@ -2,6 +2,15 @@ import Vue from 'vue'
 import * as types from './mutation-types'
 
 export default {
+  // Fetch the boars through firebase
+  [types.FETCH_BOARDS_REQUEST] (state) {
+    console.log('Fetching data...')
+  },
+
+  [types.FETCH_BOARDS_SUCCESS] (state, { boards }) {
+    state.boards = { ...boards }
+  },
+
   // Create a new board
   [types.ADD_BOARD] (state, { board }) {
     Vue.set(state.boards, board.id, board)

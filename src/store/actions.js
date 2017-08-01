@@ -1,7 +1,18 @@
 import shortid from 'shortid'
+
 import * as types from './mutation-types'
+import { db } from '@/firebase'
 
 export default {
+  fetchBoards ({ commit, state }) {
+    commit(types.FETCH_BOARDS_REQUEST)
+
+    let boardsRef = db.ref('/boards')
+    boardsRef.once('value', snapshot => {
+      commit(types.FETCH_BOARDS_SUCCESS, { boards: snapshot.val() })
+    })
+  },
+
   addBoard ({ commit }, { name }) {
     let board = {
       id: shortid.generate(),
