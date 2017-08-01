@@ -36,7 +36,7 @@ export default {
   },
 
   created () {
-    this.fetchBoards()
+    this.fetchBoards({ user: 1 })
   }
 }
 </script>

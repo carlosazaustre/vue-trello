@@ -2,7 +2,7 @@ import Vue from 'vue'
 import * as types from './mutation-types'
 
 export default {
-  // Fetch the boards through firebase
+  // Fetch the boards created by user
   [types.FETCH_BOARDS_REQUEST] (state) {
     state.fetchingData = true
     state.error = null
@@ -15,6 +15,40 @@ export default {
   },
 
   [types.FETCH_BOARDS_FAILURE] (state, { error }) {
+    state.fetchingData = false
+    state.error = error
+  },
+
+  // Fetch the lists from a board
+  [types.FETCH_LISTS_REQUEST] (state) {
+    state.fetchingData = true
+    state.error = null
+  },
+
+  [types.FETCH_LISTS_SUCCESS] (state, { lists }) {
+    state.fetchingData = false
+    state.error = null
+    state.lists = { ...lists }
+  },
+
+  [types.FETCH_LISTS_FAILURE] (state, { error }) {
+    state.fetchingData = false
+    state.error = error
+  },
+
+  // Fetch the tasks from a list
+  [types.FETCH_TASKS_REQUEST] (state) {
+    state.fetchingData = true
+    state.error = null
+  },
+
+  [types.FETCH_TASKS_SUCCESS] (state, { tasks }) {
+    state.fetchingData = false
+    state.error = null
+    state.tasks = { ...tasks }
+  },
+
+  [types.FETCH_TASKS_FAILURE] (state, { error }) {
     state.fetchingData = false
     state.error = error
   },

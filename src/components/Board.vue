@@ -7,6 +7,9 @@
       v-model="listName"
       @keyup.enter="add()"
     />
+    <template v-if="fetchingData">
+      <span>Loading...</span>
+    </template>
     <div class="container">
       <column
         v-for="(list, index) in boardLists"
@@ -19,7 +22,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 import Column from './Column'
 
 export default {
@@ -38,6 +41,10 @@ export default {
   },
 
   computed: {
+    ...mapState([
+      'fetchingData',
+      'error'
+    ]),
     ...mapGetters([
       'getListsByBoard'
     ]),
@@ -48,12 +55,17 @@ export default {
 
   methods: {
     ...mapActions([
-      'addColumn'
+      'addColumn',
+      'fetchLists'
     ]),
     add () {
       this.addColumn({ board: this.id, name: this.listName })
       this.listName = ''
     }
+  },
+
+  created () {
+    this.fetchLists({ board: this.id })
   }
 }
 </script>

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import TaskList from '@/components/TaskList'
 
 export default {
@@ -34,7 +34,13 @@ export default {
     }
   },
 
-  methods: {}
+  methods: {
+    ...mapActions(['fetchTasks'])
+  },
+
+  created () {
+    this.fetchTasks({ list: this.listId })
+  }
 }
 </script>
 
