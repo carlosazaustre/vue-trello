@@ -6,6 +6,7 @@
       <div class="userinfo">
         <img :src="user.photoURL" :alt="user.displayName" />
         <span>{{ user.displayName }}</span>
+        <button class="btn-header btn-login">Logout</button>
       </div>
     </template>
     <template v-else>
@@ -44,11 +45,13 @@ export default {
 
   .btn-header {
     background-color: #455A64;
+    border: none;
     border-radius: 3px;
     box-shadow: 0 0 0 0.5px rgba(49,49,93,.03),
       0 2px 5px 0 rgba(49,49,93,.1),
       0 1px 2px 0 rgba(0,0,0,.08);
     color: #B0BEC5;
+    cursor: pointer;
     text-decoration: none;
     padding: 0.5rem;
     margin: 0 0.5rem
