@@ -2,23 +2,33 @@
 
 > Trello clone with Vue and Vuex
 
-![Home View](./screenshot_a.png)
-![Board View](./screenshot_b.png)
+![Home View](./docs/screenshot_a.png)
+![Board View](./docs/screenshot_b.png)
 
 ## Features
 * Vue.js v2
 * Vuex v2
-* Manage state with actions and mutations
+* Handle state with actions and mutations (Vuex)
 * Getters to manage partial state in Components
 * Scoped styles with Sass/SCSS
 * User can create multiple boards, lists and tasks
-* Vue-Router to show differents boards
-
-## ToDos
+* Vue-Router to show different boards
 * Persistence with Firebase
+
+## Next steps
+
 * User authentication
 * Create Vuex modules when the app grow with new features
 * Lazy loading modules in Vuex and Route based components
+
+## Configure
+
+Create a new project on [Firebase Console](https://console.firebase.google.com)
+and then create a web app and copy the configuration object.
+
+Rename `src/firebase/settings.js.sample` to `src/firebase/settings.js` and paste it the firebase configuration project.
+
+Open `.firebaserc` file and change the value of default project for your just created firebase project.
 
 ## Build Setup
 
