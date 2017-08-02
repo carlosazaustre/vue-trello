@@ -1,6 +1,15 @@
 {
   "rules": {
     ".read": "auth == null",
-    ".write": "auth == null"
+    ".write": "auth == null",
+    "boards": {
+      ".indexOn": ["owner"]
+    },
+    "lists": {
+      ".indexOn": ["board"]
+    },
+    "tasks": {
+      ".indexOn": ["list"]
+    }
   }
 }

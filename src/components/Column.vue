@@ -16,9 +16,7 @@ import TaskList from '@/components/TaskList'
 
 export default {
   name: 'column',
-  components: {
-    TaskList
-  },
+  components: { TaskList },
 
   props: {
     listId: String,
