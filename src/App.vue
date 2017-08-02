@@ -46,9 +46,7 @@ export default {
     color: #37474f;
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     margin: 0 auto;
-    min-height: 100%;
     padding: 0;
-    position: relative;
     text-align: center;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
