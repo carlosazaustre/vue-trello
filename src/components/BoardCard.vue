@@ -18,13 +18,13 @@ export default {
 
 <style lang="scss" scoped>
   .board-card {
-    background-color: #cfd8dc;
+    background-color: #546E7A;
     box-shadow: 0 0 0 0.5px rgba(49,49,93,.03),
       0 2px 5px 0 rgba(49,49,93,.1),
       0 1px 2px 0 rgba(0,0,0,.08);
     box-sizing: border-box;
     border-radius: 5px;
-    color: #37474f;
+    color: #fafafa;
     margin: 0.5rem 1.5rem;
     padding: 1rem;
     text-align: left;
@@ -40,7 +40,6 @@ export default {
     &:hover {
       background-color: #90a4ae;
       font-weight: bold;
-      color: #fafafa;
     }
 
     @media screen and (min-width: 600px) {

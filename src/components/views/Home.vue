@@ -65,12 +65,33 @@ export default {
     text-align: left;
     margin: 1.5rem;
   }
+
   .boards-collection {
-    background-color: #fff;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 1rem;
+  }
+
+  input {
+    box-sizing: border-box;
+    background-color: #546E7A;
+    border: 2px solid #546E7A;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    outline: 0;
+    padding: 0.5rem;
+    transition: all 600ms ease;
+
+    &:focus,
+    &:active {
+      background-color: white;
+      color: #546E7A;
+    }
+
+    &::placeholder {
+      color: white;
+    }
   }
 </style>

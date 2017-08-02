@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-header :user="user"></app-header>
-    <router-view></router-view>
+    <router-view class="container"></router-view>
     <app-footer></app-footer>
   </div>
 </template>
@@ -43,49 +43,18 @@ export default {
 <style lang="scss" scoped>
   #app {
     box-sizing: border-box;
-    background-color: #b0bec5;
     color: #37474f;
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     margin: 0 auto;
+    min-height: 100%;
     padding: 0;
+    position: relative;
     text-align: center;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
   }
 
-  input {
-    box-sizing: border-box;
-    background-color: #546E7A;
-    border: 2px solid #546E7A;
-    font-size: 1.1rem;
-    outline: 0;
-    padding: 0.5rem;
-    transition: all 600ms ease;
-    width: 100%;
-
-    &:focus,
-    &:active {
-      background-color: white;
-      color: #546E7A;
-    }
-
-    &::placeholder {
-      color: white;
-    }
-  }
-
-  footer {
-    box-sizing: border-box;
-    background-color: #cfd8dc;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    position: absolute;
-    width: 100%;
-
-    a {
-      text-decoration: none;
-      color: #546E7A;
-    }
+  .container {
+    padding-bottom: 4rem;
   }
 </style>
