@@ -12,7 +12,8 @@ export default {
 
   postBoard (name) {
     const id = boardsRef.push().key
-    const board = { id, name }
+    const owner = 1
+    const board = { id, name, owner }
 
     return boardsRef.child(id)
       .set(board)

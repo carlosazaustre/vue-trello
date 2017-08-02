@@ -5,6 +5,12 @@
       <template v-if="fetchingData">
         <span>Loading...</span>
       </template>
+      <input
+        type="text"
+        placeholder= "Add new board"
+        v-model="boardName"
+        @keyup.enter="add()"
+      />
       <board-card
         v-for="(board, index) in boards"
         :key="index"
@@ -23,6 +29,12 @@ export default {
   name: 'home-view',
   components: { BoardCard },
 
+  data () {
+    return {
+      boardName: ''
+    }
+  },
+
   computed: {
     ...mapState([
       'boards',
@@ -32,7 +44,14 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchBoards'])
+    ...mapActions([
+      'fetchBoards',
+      'addBoard'
+    ]),
+    add () {
+      this.addBoard({ name: this.boardName })
+      this.boardName = ''
+    }
   },
 
   created () {
