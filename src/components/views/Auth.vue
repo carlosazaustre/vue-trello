@@ -10,5 +10,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scped>
+<style lang="scss" scoped>
 </style>
