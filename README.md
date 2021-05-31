@@ -2,6 +2,13 @@
 
 > Trello clone with Vue and Vuex
 
+## YouTube video tutorial (Spanish speaking)
+
+▶️ [https://www.youtube.com/watch?v=Wd9dOIlTWCc](https://www.youtube.com/watch?v=Wd9dOIlTWCc)
+[![thumb copy 83](https://user-images.githubusercontent.com/650752/120224800-67cd3b00-c244-11eb-99ff-a1e9928c9a4d.png)](https://www.youtube.com/watch?v=Wd9dOIlTWCc)
+
+## Screenshots
+
 ![Home View](./docs/screenshot_a.png)
 ![Board View](./docs/screenshot_b.png)
 
